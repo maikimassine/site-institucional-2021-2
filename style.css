@@ -36,6 +36,13 @@ header {
 #img-logo {
   background-color: transparent;
 }
+
+#menu-principal {
+  min-height: 88px;
+  padding: 0;
+
+}
+
 #menu-principal {
   display: flex;
   justify-content: center;  /* centralização horizontal */
@@ -72,6 +79,45 @@ header {
   */
   filter: brightness(1.2);
 }
+
+#menu-contraido {
+display: inline-block;
+position: relative
+
+}
+
+#menu-contraido input, #menu-contraido span{
+width: 40px;
+height: 40px;
+position:  absolute;
+top: 0;
+left: 0;
+
+}
+
+#menu-contraido input {
+  /*quanto maior o z-index  mais acima (pensando em camadas) o elemento estara
+  o padrão z-index é 0*/
+  z-index: 100;
+  opacity: 0; /*esconde o checkbox*/
+  display: none;
+}
+
+#menu-contraido span{
+  display: block;
+  background-color: var(--cor-prim);
+  border-radius: 4px;
+  border: 2px solid var(--cor-texto);
+  background-image: url('img/menu-icon-48x48.png');
+  background-position: center center;
+  cursor: pointer; /*cursor para "mãozinha" links*/
+  display: none; 
+}
+
+#menu-contraido input:checked ~span {
+  background-image: url('img/close-icon-48x48.png');
+}
+
 main {
   display: flex;
   justify-content: center;  /* centralização horizontal */
@@ -208,13 +254,98 @@ article {
   width: 100%;
 }
 /* Regras para tela com largura de até 600px */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px){ 
+  body{
+      border: 3px dashed limegreen;
+      
+  }  
   main {
-    /* muda a direção dos filhos para coluna (vertical) */
-    flex-direction: column;
+      display: flex;
+      flex-direction: column;
   }
-  /* section e aside ficam com 100% de largura */
   section, aside {
-    width: 100%;
+      width: calc(100% - 40px);
+   
   }
+} 
+
+/* Dispositivos (celurares) medios */
+@media screen and (max-width: 992px){ 
+  body{
+      border: 3px dashed aquamarine;
+  } 
+  main {
+      display: flex;
+      flex-direction: column;
+  }
+  section, aside {
+      width: calc(100% - 40px);
+     
+  }
+}
+
+/* Dispositivos (tablets) */
+@media screen and (max-width: 768px){   
+  body{
+      border: 3px dashed gold;
+  }
+  #menu-principal{
+      min-height: 88px;
+      padding: 0;
+  } 
+
+  #menu-contraido{
+      margin-top: 24px;
+      width: 100%;
+  }
+
+  #menu-contraido input, #menu-contraido span {
+      display: block;
+  } 
+  
+  #menu-contraido ul{
+      display:none;
+      margin-top: 50px
+  }
+
+  #menu-contraido ul li {
+    display: block;
+    left: 20px;
+    top: -24;
+  }
+
+
+  #menu-contraido input:checked ~ ul{
+      display: block;
+      
+  }
+
+  aside {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+  }
+  #social ul li a span{
+      display: none;
+  } 
+  section, aside {
+      width: calc(100% - 40px);
+  } 
+}
+
+/* Dispositivos (tablets) */
+@media screen and (max-width: 576px){  
+  body{
+      border: 3px dashed magenta;
+      } 
+  main {
+      display: flex;
+      flex-direction: column;
+  }
+  section, aside {
+     width: calc(100% - 40px);
+  }
+  #social ul li a span{
+      display: none;
+  }  
 }
