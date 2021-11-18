@@ -295,6 +295,69 @@ article {
   width: 100%;
 }
 
+.pagina-interna {
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+}
+
+.pagina-interna figure {
+  background-color: var(--cor-fundo);
+  padding: 20px;
+  border-radius: 16px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.pagina-interna figure img {
+  width: 100%;
+  max-width: 800px;
+}
+
+.pagina-interna figure figcaption {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  text-align: center;
+  color: var(--cor-texto);
+  text-shadow: 1px 1px 2px var(--cor-fundo-clara);
+  padding: 8px 8px 0 8px;
+}
+
+.pagina-interna p {
+  text-align: left;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.pagina-interna section h2 {
+  text-align: left;
+  width: 100%;
+  color: var(--cor-fundo);
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-size: 1.5rem;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.pagina-interna section h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 2.5rem;
+  color: var(--cor-secun-clara);
+  font-weight: bold;
+  text-align: left;  
+}
+
+.pagina-interna a {
+  color: var(--cor-prim-clara);
+  text-decoration: none;
+}
+
+.pagina-interna a:hover {
+  color: var(--cor-prim);
+  text-decoration: underline;
+}
+
 /**************************************************
              REGRAS DE RESPONSIVIDADE
 ***************************************************/
@@ -303,7 +366,7 @@ article {
 @media (max-width: 1200px) {
   /*body {
     filter: hue-rotate(45deg);
-  }
+  }*/
 
   /* Esconde o texto das redes sociais */
   #social ul li a span {
@@ -339,7 +402,7 @@ article {
 @media (max-width: 992px) {
   /*body {
     filter: hue-rotate(90deg);
-  }
+  }*/
   /* POR ENQUANTO não necessita de ajuste */
 }
 
